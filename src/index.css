@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input {
+    @apply rounded-md md:w-1/4 w-4/5 bg-[#373737] h-10 md:h-8 md:mx-16 p-1 pr-2 text-right text-white text-[14px] md:text-[20px] font-['Inter'];
+  }
+
+  @variants hover, focus {
+    input {
+      @apply bg-gray-800;
+    }
+  }
+
+th {
+
+}
