@@ -3,15 +3,46 @@
 @tailwind utilities;
 
 input {
-    @apply rounded-md md:w-1/4 w-4/5 bg-[#373737] h-10 md:h-8 md:mx-16 p-1 pr-2 text-right text-white text-[14px] md:text-[20px] font-['Inter'];
+    @apply rounded-md md:w-1/4 w-4/5 bg-[#373737] md:h-12 md:mx-16 p-1 pr-2 text-right text-white text-[14px] md:text-[20px] font-['Inter'];
   }
 
-  @variants hover, focus {
-    input {
-      @apply bg-gray-800;
-    }
+@layer utilities {
+  input:hover {
+    @apply bg-[#1b1b1b];
   }
 
-th {
+  input:focus {
+    @apply bg-[#1b1b1b] outline-none border-none;
+  }
+}
 
+
+/* Стилизация трека (дорожки) ползунка */
+::-webkit-scrollbar {
+  width: 12px; /* Ширина ползунка */
+}
+
+/* Стилизация ползунка */
+::-webkit-scrollbar-thumb {
+  background-color: #373737; /* Цвет ползунка */
+  border-radius: 10px; /* Скругленные углы */
+  border: 3px solid #242424; /* Белый ободок вокруг ползунка */
+}
+
+/* Стилизация трека (фон за ползунком) */
+::-webkit-scrollbar-track {
+  background-color: #242424; /* Цвет дорожки */
+  border-radius: 10px; /* Скругленные углы трека */
+}
+
+/* Для Chrome, Safari, Edge */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Для Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
