@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Inter';
+  src: url('../fonts/Inter-VariableFont.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 input {
     @apply rounded-md md:w-1/4 w-4/5 bg-[#373737] md:h-12 md:mx-16 p-1 pr-2 text-right text-white text-[14px] md:text-[20px] font-['Inter'];
   }

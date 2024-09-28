@@ -161,21 +161,21 @@ const App: React.FC = () => {
                 <div className="my-8 flex flex-wrap">
                     <div className="flex md:flex-row flex-col p-3 w-full bg-[#2c2c2c]">
                         <div className="md:w-1/2 flex justify-between items-center w-full md:mb-0 mb-4">
-                            <label className="text-white text-2xl mr-2">Ввод мВт (Для D0л6@Eб0в)</label>
+                            <label className="text-white md:text-2xl text-base mr-2">Ввод мВт (Для D0л6@Eб0в)</label>
                             <input
                                 type="checkbox"
                                 checked={toggle.mPower}
                                 onChange={toggleSwitch}
-                                className="w-8 h-8"
+                                className="w-6 h-6"
                             />
                         </div>
                         <div className="md:w-1/2 flex justify-between items-center w-full">
-                            <label className="text-white text-2xl mr-2">Расширенная таблица</label>
+                            <label className="text-white md:text-2xl text-base mr-2">Расширенная таблица</label>
                             <input
                                 type="checkbox"
                                 checked={toggle.fullTable}
                                 onChange={toggleFullTable}
-                                className="w-8 h-8"
+                                className="w-6 h-6"
                             />
                         </div>
                     </div>
