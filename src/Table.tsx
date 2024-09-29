@@ -33,7 +33,6 @@ const paramsPlus = [
   "Bn",
   "Bmin",
   "Bmax",
-  "BΔ",
   "Breg",
   "Btehn",
   "ΔL dash Trim",
@@ -57,6 +56,7 @@ const paramsPlus = [
   "L sum",
   "Ltehn",
   "Ltune",
+  "Lp",
   "Meander Area",
   "N",
   "Допустимая удельная мощность",
@@ -115,8 +115,7 @@ const Table = ({ serverData, fullTable }: TableProps) => {
   item.Bo,                                 // Bo
   item.Bn,                                 // Bn
   item.Bmin,                               // Bmin
-  item.Bmax,                               // Bmax
-  item.Bdelta,                         // RminTrim
+  item.Bmax,                         // RminTrim
   item.Breg,                               // Breg
   item.Btehn,                              // Btehn
   item.DeltaLdashTrim,                     // DeltaLdashTrim
@@ -143,7 +142,8 @@ const Table = ({ serverData, fullTable }: TableProps) => {
   item.Lp,
   item.MeanderArea,                        // MeanderArea
   item.N,                                  // N
-  item.PermissibleSpecificPowerDissipation,// Допустимая удельная мощность рассеивания
+  item.PermissibleSpecificPowerDissipation,
+  item.Power,// Допустимая удельная мощность рассеивания
   item.Rdashmin,                           // Rdashmin
   item.RdashminTrim,                       // RdashminTrim
   item.Rmax,                               // Rmax
