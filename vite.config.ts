@@ -7,9 +7,10 @@ export default defineConfig(({ mode }) => {
   return {
     plugins: [react()],
     define: {
-      'process.env.API_URL': mode === 'development'
-        ? '"http://localhost:3000"'
-        : '"https://production-api.com"'
-    }
+      'process.env.API_URL':
+        mode === 'development'
+          ? '"http://localhost:3000"'
+          : '"https://production-api.com"',
+    },
   };
 });

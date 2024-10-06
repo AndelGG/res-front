@@ -4,14 +4,14 @@
 
 @font-face {
   font-family: 'Inter';
-  src: url('../fonts/Inter-VariableFont.ttf') format('truetype');
+  src: url('../../fonts/Inter-VariableFont.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 input {
-    @apply rounded-md md:w-1/4 w-4/5 bg-[#373737] md:h-12 md:mx-16 p-1 pr-2 text-right text-white text-[14px] md:text-[20px] font-['Inter'];
-  }
+  @apply rounded-md md:w-1/4 w-4/5 bg-[#373737] md:h-12 md:mx-16 p-1 pr-2 text-right text-white text-[14px] md:text-[20px] font-['Inter'];
+}
 
 @layer utilities {
   input:hover {
@@ -22,7 +22,6 @@ input {
     @apply bg-[#1b1b1b] outline-none border-none;
   }
 }
-
 
 /* Стилизация трека (дорожки) ползунка */
 ::-webkit-scrollbar {
@@ -43,13 +42,13 @@ input {
 }
 
 /* Для Chrome, Safari, Edge */
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 /* Для Firefox */
-input[type="number"] {
+input[type='number'] {
   -moz-appearance: textfield;
 }

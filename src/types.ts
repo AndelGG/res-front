@@ -1,17 +1,28 @@
 export interface IResIn {
-    resistance: string;
-    power: string;
-    tolerance: string;
+  resistance: string;
+  power: string;
+  tolerance: string;
 }
 
-export interface IMaterials{
-        "Number": number,
-        "Name": string,
-        "SquareResistance": number,
-        "PermissibleSpecificPowerDissipation": number,
-        "TemperatureCoefficientOfResistance": number,
-        "Senescence": number
-    }
+export interface ICapIn {
+  capacity: string;
+  urab: string;
+  tolerance: string;
+}
+
+export interface IMaterials {
+  Number: number;
+  Name: string;
+  SquareResistance?: number;
+  PermissibleSpecificPowerDissipation?: number;
+  TemperatureCoefficientOfResistance?: number;
+  Senescence?: number;
+  Cud?: number;
+  ElStrength?: number;
+  E?: number;
+  Tgdelta?: number;
+  Tke?: number;
+}
 
 export interface IResOut {
   Bdelta: number;
@@ -27,7 +38,7 @@ export interface IResOut {
   DeltaLrTrim: number;
   DeltaR: number;
   Deltab: number;
-  Deltabi: number[] // Массив из 3 чисел
+  Deltabi: number[];
   Deltal: number;
   Deltar: number;
   FormFactor: number;
@@ -39,8 +50,8 @@ export interface IResOut {
   GammaRokv: number;
   GammaRt: number;
   Gammakf: number;
-  IR: number[]; // Массив из 3 чисел
-  Ir: number[]; // Массив из 3 чисел
+  IR: number[];
+  Ir: number[];
   LSumTrim: number;
   Ldelta: number;
   Length: number;
@@ -79,8 +90,44 @@ export interface IResOut {
   Ymeander: number;
 }
 
-export interface IResInA {
-    temperature: number | string,
-    material: number | string,
-    res: IResIn[];
+export interface ICapOut {
+  Capacity: number;
+  Tolerance: number;
+  Urab: number;
+  E: number;
+  Area: number;
+  D: number;
+  GammaCt: number;
+  GammaSdop: number;
+  Cdash: number;
+  Cdoubledash: number;
+  Ctripledash: number;
+  C0: number;
+  A1: number;
+  B1: number;
+  A2: number;
+  B2: number;
+  A3: number;
+  B3: number;
+  RealArea: number;
+  RealD: number;
+}
+
+interface Cap {
+  capacity: string;
+}
+export interface IForm {
+  temperature: string;
+  material: string;
+  tolerance: string;
+  urab: string;
+  res: IResIn[];
+  cap: Cap[];
+}
+
+export interface IResponse {
+  temperature: number;
+  material: number;
+  res: IResIn[];
+  cap: ICapIn[];
 }
