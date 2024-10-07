@@ -58,7 +58,7 @@ const App: React.FC = () => {
 
   useEffect(() => {
     const fetchAxios = async () => {
-      const url = 'http://localhost:8080/';
+      const url = '/api/';
       try {
         const response = await axios.post(
           url + (toggle.capacity ? 'arrOfCaps' : 'arrOfRes'),
@@ -80,7 +80,7 @@ const App: React.FC = () => {
     };
     const fetchMaterial = async () => {
       try {
-        const url = 'http://localhost:8080/';
+        const url = '/api/';
         const response = await axios.get(
           url + (toggle.capacity ? 'capacitorMaterials' : 'resistorMaterials'),
           {
