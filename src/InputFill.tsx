@@ -34,16 +34,18 @@ const InputFill = ({ control, register }: InputProps) => {
     };*/
   });
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col justify-center w-full">
       <div>
         {fields.map((item, index) => (
-          <div key={item.id} className="flex flex-col md:flex-row m-4 gap-2">
-            <h1 className="text-white text-3xl w-2">{index + 1}</h1>
+          <div
+            key={item.id}
+            className="flex flex-wrap m-4 gap-2 justify-between md:justify-center"
+          >
+            <h1 className="flex flex-row text-white text-3xl w-2">
+              {index + 1}
+            </h1>
             {toggle.capacity ? (
-              <div
-                key={item.id}
-                className="flex flex-col md:flex-row m-4 gap-2"
-              >
+              <div key={item.id} className="flex flex-row md:w-2/5">
                 <input
                   type="number"
                   {...register(`cap.${index}.capacity` as const, {
@@ -59,7 +61,7 @@ const InputFill = ({ control, register }: InputProps) => {
                   })}
                   step="0.01"
                   placeholder="Емкость(пкФ)"
-                  className="input"
+                  className="input md:w-full"
                 />
               </div>
             ) : (
@@ -127,22 +129,24 @@ const InputFill = ({ control, register }: InputProps) => {
           </div>
         ))}
       </div>
-      <button
-        type="button"
-        onClick={() => {
-          if (fields.length < 20) {
-            append({ resistance: '', power: '', tolerance: '' });
-            if (toggle.capacity) {
-              Cookies.set('cap', JSON.stringify(fields), { expires: 7 });
-            } else {
-              Cookies.set('res', JSON.stringify(fields), { expires: 7 });
+      <div className="flex w-full justify-center">
+        <button
+          type="button"
+          onClick={() => {
+            if (fields.length < 20) {
+              append({ resistance: '', power: '', tolerance: '' });
+              if (toggle.capacity) {
+                Cookies.set('cap', JSON.stringify(fields), { expires: 7 });
+              } else {
+                Cookies.set('res', JSON.stringify(fields), { expires: 7 });
+              }
             }
-          }
-        }}
-        className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 h-12"
-      >
-        Добавить
-      </button>
+          }}
+          className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 h-12 md:w-1/4"
+        >
+          Добавить
+        </button>
+      </div>
     </div>
   );
 };

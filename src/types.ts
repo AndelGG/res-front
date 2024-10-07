@@ -111,6 +111,8 @@ export interface ICapOut {
   B3: number;
   RealArea: number;
   RealD: number;
+  Area15: number;
+  Karea15: number;
 }
 
 interface Cap {

@@ -92,6 +92,8 @@ const paramsCap = [
   'B3',
   'RealArea',
   'RealD',
+  'Area15',
+  'Karea15',
 ];
 
 const Table = ({ serverData }: TableProps) => {
@@ -211,6 +213,8 @@ const Table = ({ serverData }: TableProps) => {
                       item.B3,
                       item.RealArea,
                       item.RealD,
+                      item.Area,
+                      item.Karea15,
                     ];
                     return (
                       <td

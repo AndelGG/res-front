@@ -102,7 +102,7 @@ const App: React.FC = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="my-8 text-center bg-[#373737] p-2">
           <label className="text-3xl font-bold text-white">
-            Таблица резисторов
+            {toggle.capacity ? 'Таблица конденсаторов' : 'Таблица резисторов'}
           </label>
         </div>
         <InputFill control={control} register={register} />
@@ -113,7 +113,7 @@ const App: React.FC = () => {
             disabled={toggle.cooldown}
             type="submit"
             value={toggle.cooldown ? 'Отправлено' : 'Отправить'}
-            className={`text-center text-white py-2 px-4 w-5/6 rounded cursor-pointer h-12 transition-colors duration-500 ${
+            className={`text-center text-white py-2 px-4 w-5/6 md:w-1/4 rounded cursor-pointer h-12 transition-colors duration-500 ${
               toggle.cooldown
                 ? 'bg-amber-500 hover:bg-amber-500'
                 : 'bg-green-500 hover:bg-green-600'
