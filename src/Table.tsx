@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux';
 import { RootState } from './store/store.ts';
 
 interface TableProps {
-  serverData: { res?: IResOut[]; cap?: ICapOut[] };
+  cap?: ICapOut[];
+  res?: IResOut[];
 }
 const params = [
   '№',
@@ -96,7 +97,7 @@ const paramsCap = [
   'Karea15',
 ];
 
-const Table = ({ serverData }: TableProps) => {
+const Table = ({ cap, res }: TableProps) => {
   const toggle = useSelector((state: RootState) => state.toggle);
   const paramsMap = toggle.capacity
     ? paramsCap
@@ -114,7 +115,7 @@ const Table = ({ serverData }: TableProps) => {
                 {param}
               </th>
               {!toggle.capacity
-                ? serverData.res?.map((item, index) => {
+                ? res?.map((item, index) => {
                     const data = [
                       index + 1,
                       item.FormFactor,
@@ -193,7 +194,7 @@ const Table = ({ serverData }: TableProps) => {
                       </td>
                     );
                   })
-                : serverData.cap?.map((item, index) => {
+                : cap!.map((item, index) => {
                     const data = [
                       index + 1,
                       item.E,

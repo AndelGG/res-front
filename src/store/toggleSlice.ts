@@ -1,5 +1,6 @@
 // slices/toggleSlice.ts
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { AppDispatch } from './store.ts';
 
 interface ToggleState {
   cooldown: boolean;
@@ -19,7 +20,7 @@ const toggleSlice = createSlice({
   name: 'toggle',
   initialState,
   reducers: {
-    setCooldown(state, action: PayloadAction<boolean>) {
+    toggleCooldown(state, action: PayloadAction<boolean>) {
       state.cooldown = action.payload;
     },
     toggleMPower(state) {
@@ -34,6 +35,13 @@ const toggleSlice = createSlice({
   },
 });
 
-export const { setCooldown, toggleMPower, toggleFullTable, toggleCapacity } =
+export const { toggleCooldown, toggleMPower, toggleFullTable, toggleCapacity } =
   toggleSlice.actions;
+
+export const setCooldown = () => (dispatch: AppDispatch) => {
+  dispatch(toggleCooldown(true));
+  setTimeout(() => {
+    dispatch(toggleCooldown(false));
+  }, 2000);
+};
 export const toggleReducer = toggleSlice.reducer;

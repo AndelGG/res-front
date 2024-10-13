@@ -68,3 +68,7 @@ input[type='number'] {
 .params {
   @apply w-full flex items-center justify-center m-0.5;
 }
+
+/*body {*/
+/*  overflow-x: hidden;*/
+/*}*/
